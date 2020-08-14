@@ -1,0 +1,45 @@
+*{box-sizing:border-box;}
+html,body{width:100%;min-height:100vh; font-size:16px;margin:0;padding:0;color:#000;background:#1D2838;}
+html{text-rendering:optimizeLegibility !important;}
+ 
+/*FONTS*/
+body{font-family: 'Arial', sans-serif; letter-spacing:0.1rem;}
+
+/*GENERAL RULES*/
+h1{margin:0; font-size:4rem; }
+h2{}
+h3{}
+ul{list-style-type:none;margin:0;padding:0}
+a{color:#C59952; text-decoration:none; }
+a:hover{ color:rgb(235, 148, 10);}
+.hidden{display:none;opacity:0}
+#tainomain{min-height:500px;}
+
+/*TEMPLATE*/
+header{position:relative; z-index:2; width:100%; background:rgb(13, 18, 25); text-align:center; height:80px; padding-top:50px;}
+header nav{width:96%; max-width:1200px; margin:0 auto; height:40px; }
+header nav a{height:40px; line-height:40px;display:inline-block; vertical-align:top; padding:0 12px; margin:0 0.4rem; font-size:16px; color:#123; background:#ddd; text-align:center; text-transform:uppercase; font-weight:bold; box-shadow:6px 6px #00A128; transition:all 0.1s;}
+header nav a:hover{color:#123; box-shadow:3px 3px #00FF40;}
+footer{width:100%; background:#333; color:#fff; text-align:center; height:100px; padding:20px;}
+
+/*PAGES*/
+.pagewrap{position:relative; overflow:hidden; z-index:1; margin:0 auto; min-height:80vh; width:100%; padding:4rem; font-size:20px; text-align:center; color:#fff; }
+.pagewrap:before{content:' '; position:absolute; top:0; right:0; width:40vw; height:40vw; transform:rotate(-40deg); background:url(../images/taino-cemi.svg) no-repeat top right; background-size:contain; opacity:0.4; z-index:-1;}
+.pagewrap:after{content:' '; position:absolute; top:5vh; left:5vw; width:40vw; height:40vw; transform:rotate(-30deg); background:url(../images/taino-sun.svg) no-repeat top right; background-size:contain; opacity:0.4; z-index:-1;}
+.pagewrap .content{padding:2rem; width:90%; max-width:1200px; margin:0 auto 40px auto;background:rgba(13, 18, 25,0.8); box-shadow:0px 0px 5px #00A128; border-radius:4px;}
+.home .content{border:0; background:none; box-shadow:none;}
+.home h1 span{display:block; font-size:2.5rem; font-weight:normal; font-style:italic; color:#00A128; }
+
+
+@media screen and (max-width:960px){
+    h1{margin:0 0.5rem 1rem 0.5rem; font-size:2.5rem; }
+    h2{margin:0 0.5rem 1rem 0.5rem; font-size:1.5rem;}
+    .pagewrap{padding:4rem 2rem;}
+}
+@media screen and (max-width:640px){
+    header{padding-top:30px;}
+    header nav a{margin-bottom:12px;}
+    .pagewrap{padding:4rem 0.5rem;}
+    .pagewrap:before{display:none;}
+    .pagewrap:after{display:none;}
+}

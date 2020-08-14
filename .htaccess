@@ -1,0 +1,51 @@
+# STRONG HTACCESS PROTECTION - make sure nothing can reach your htaccess via bot or browser
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    Deny from all
+</Files>
+
+Options All -Indexes
+
+RewriteEngine On
+#RewriteBase /swcrepair/
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.html
+
+#FILE HEADERS SO THE BROWSER KNOWS HOW LONG TO KEEP A FILE TYPE CACHED
+<IfModule mod_headers.c>
+  # 1 YEAR
+	<FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav)$">
+	 Header set Cache-Control "max-age=29030400, public"
+	</FilesMatch>
+
+	# 1 WEEK
+	<FilesMatch "\.(jpg|jpeg|png|gif|swf|svg)$">
+	 Header set Cache-Control "max-age=604800, public"
+	</FilesMatch>
+
+	# 3 HOUR
+	<FilesMatch "\.(txt|xml|js|css|php)$">
+	 Header set Cache-Control "max-age=10800"
+	</FilesMatch>
+
+	<FilesMatch "\.(js|css|xml|gz|svg)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+# FILE EXPIRE SPECIFIC HEADER TO AGAIN HELP WITH PROPER CACHING
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/jpg "access plus 30 days"
+	ExpiresByType image/jpeg "access plus 30 days"
+	ExpiresByType image/gif "access plus 30 days"
+	ExpiresByType image/png "access plus 30 days"
+	ExpiresByType text/css "access plus 1 month"
+	ExpiresByType application/pdf "access plus 1 month"
+	ExpiresByType text/x-javascript "access plus 1 month"
+	ExpiresByType application/x-shockwave-flash "access plus 1 month"
+	ExpiresByType image/x-icon "access plus 1 year"
+	ExpiresDefault "access plus 7 days"
+</IfModule>
