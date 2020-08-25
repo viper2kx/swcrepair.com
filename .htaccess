@@ -7,7 +7,6 @@
 Options All -Indexes
 
 RewriteEngine On
-#RewriteBase /swcrepair/
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
