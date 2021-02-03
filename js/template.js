@@ -9,14 +9,14 @@ class templateLoader {
                       <ul class="list-inline my-1">
                         <li class="list-inline-item">
                           <i class="fas fa-phone"></i>
-                          <a href="tel:+16124321946" class="phone">+1 612-432-1946</a>
+                          <a href="tel:" class="phone"></a>
                         </li>
                         <li class="list-inline-item">
                           <i class="fas fa-map-marker-alt"></i>
-                          <a href="https://goo.gl/maps/WUwXZDDde5z" class="address" rel="nofollow noreferrer" target="_blank">Finland, MN 55603</a>
+                          <a href="" class="address" rel="nofollow noreferrer" target="_blank"></a>
                         </li>
                         <li class="list-inline-item">
-                          <a href="https://www.facebook.com/SWCRepair/" rel="nofollow noreferrer" class="facebook" target="_blank">
+                          <a href="" rel="nofollow noreferrer" class="facebook" target="_blank">
                             <i class="fab fa-facebook-f"></i>
                             <span class="sr-only">Go to our Facebook page</span>
                           </a>
