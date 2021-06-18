@@ -4,8 +4,8 @@
 class taino {
   constructor(routes) {
     /*define taino global vars, mostly endpoints and public creds*/
-    this.jspath = '/js';
-    this.csspath = '/css';
+    this.jspath = '/swcrepair/js';
+    this.csspath = '/swcrepair/css';
     this.header = ''; /*sitewide header defined in template.js or wherever*/
     this.footer = ''; /*sitewide footer defined in template.js or wherever*/
     this.templatefile = '/template';
@@ -108,7 +108,7 @@ class taino {
   }
 
   getcurrent(path) {
-    let curr = '/fourohfour'; /*Need to make this have a 404 header*/
+    let curr = '/swcrepair/fourohfour'; /*Need to make this have a 404 header*/
     for (var i = 0, l = this.routes.length; i < l; i++) {
       var found = path.replace(".html", "").match(this.routes[i].path);
       if (found) {
@@ -275,8 +275,8 @@ class taino {
 
 /*define routes*/
 let routes = {
-  '/': 'home',
-  '/contact': 'contact'
+  '/swcrepair/': 'home',
+  '/swcrepair/contact': 'contact'
 }
 
 const site = new taino(routes);
